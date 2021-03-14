@@ -45,8 +45,7 @@ public class CensusAnalyser
             CsvToBean<IndiaStateCSV> csvToBean = csvToBeanBuilder.build();
             Iterator<IndiaStateCSV> censusCSVIterator = csvToBean.iterator();
             Iterable<IndiaStateCSV> csvIterable = () -> censusCSVIterator;
-            int numOfEntryState = (int) StreamSupport.stream(csvIterable.spliterator(), false).count();
-            return numOfEntryState;
+            return (int) StreamSupport.stream(csvIterable.spliterator(), false).count();
         } catch (IOException e) {
             throw new CensusAnalyserException(e.getMessage(),
                     CensusAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM);

@@ -6,9 +6,8 @@ public class CensusAnalyserException extends Exception
     {
         CENSUS_FILE_PROBLEM,UNABLE_TO_PARSE;
 
-        public enum UNABLE_TO_PARSE {}
+        //public enum UNABLE_TO_PARSE {}
     }
-
     ExceptionType type;
 
     public CensusAnalyserException(String message, ExceptionType type) {
